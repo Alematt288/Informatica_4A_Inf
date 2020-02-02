@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<hotel name="">
+    <allievo bagno="si" nome="1">
+        <letto>2</letto>
+        <vista>mare</vista>
+    </allievo>
+    <allievo bagno="si" nome="2">
+        <letto>4</letto>
+        <vista>citta'</vista>
+    </allievo>
+    <allievo bagno="si" nome="3">
+        <letto>2</letto>
+        <vista>campagna</vista>
+    </allievo>
+    <allievo bagno="si" nome="Special">
+        <letto>10</letto>
+        <vista>spazio</vista>
+    </allievo>
+</hotel>
