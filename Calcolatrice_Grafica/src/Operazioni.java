@@ -18,17 +18,17 @@ public class Operazioni extends JFrame implements ActionListener
     JButton bQuoziente;
 
     JLabel ris;
-    JLabel r;
 
     public Operazioni()
     {
-        setSize(1000,2000);
         setLocation(200, 200);
-        setTitle("Calcolatrice");
+        setTitle("Java_CG");
         initComponets();
         pack();
 
         Container container = this.getContentPane();
+        container.setBackground(Color.LIGHT_GRAY);
+        setSize(230, 200);
 
         setVisible(true);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -38,26 +38,30 @@ public class Operazioni extends JFrame implements ActionListener
     {
         this.setLayout(new FlowLayout());
 
-        fattoreA = new JLabel("Fattore A: ");
+        fattoreA = new JLabel("Numero A: ");
         this.add(fattoreA);
         fFattoreA = new JTextField(10);
         this.add(fFattoreA);
 
-        fattoreB = new JLabel("Fattore B: ");
+        fattoreB = new JLabel("Numero B: ");
         this.add(fattoreB);
         fFattoreB = new JTextField(10);
         this.add(fFattoreB);
 
         bSomma = new JButton("Somma");
+        bSomma.setBackground(Color.YELLOW);
         this.add(bSomma);
 
         bDifferenza = new JButton("Differenza");
+        bDifferenza.setBackground(Color.YELLOW);
         this.add(bDifferenza);
 
         bProdotto = new JButton("Prodotto");
+        bProdotto.setBackground(Color.YELLOW);
         this.add(bProdotto);
 
         bQuoziente = new JButton("Quoziente");
+        bQuoziente.setBackground(Color.YELLOW);
         this.add(bQuoziente);
 
         ris = new JLabel("- Risultato -");
@@ -76,21 +80,21 @@ public class Operazioni extends JFrame implements ActionListener
             int n1 = Integer.parseInt(fFattoreA.getText());
             int n2 = Integer.parseInt(fFattoreB.getText());
             int res = n1 + n2;
-            ris.setText(" = " + res);
+            ris.setText(" ~ " + res + " ~ ");
         }
         else if(e.getSource() == bDifferenza)
         {
             int n1 = Integer.parseInt(fFattoreA.getText());
             int n2 = Integer.parseInt(fFattoreB.getText());
             int res = n1 - n2;
-            ris.setText(" = " + res);
+            ris.setText(" ~ " + res + " ~ ");
         }
         else if(e.getSource() == bProdotto)
         {
             int n1 = Integer.parseInt(fFattoreA.getText());
             int n2 = Integer.parseInt(fFattoreB.getText());
             int res = n1 * n2;
-            ris.setText(" = " + res);
+            ris.setText(" ~ " + res + " ~ ");
         }
         else if(e.getSource() == bQuoziente)
         {
@@ -99,7 +103,7 @@ public class Operazioni extends JFrame implements ActionListener
             int res = n1 / n2;
             int resto = n1 % n2;
 
-            ris.setText(" = " + res + ", R: " + resto);
+            ris.setText(" ~ " + res + ", R: " + resto + " ~ ");
         }
     }
 
