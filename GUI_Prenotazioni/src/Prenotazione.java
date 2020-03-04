@@ -46,4 +46,16 @@ public class Prenotazione
                 ", data: " + data + '\'' +
                 '}';
     }
+
+    public String rowCsv()
+    {
+        return "Prenotazione: " + PrenotazioneOp.SEPARATOR +
+                cognome + PrenotazioneOp.SEPARATOR +
+                nome + PrenotazioneOp.SEPARATOR +
+                telefono + PrenotazioneOp.SEPARATOR +
+                cittaP + PrenotazioneOp.SEPARATOR +
+                cittaD + PrenotazioneOp.SEPARATOR +
+                data + PrenotazioneOp.SEPARATOR +
+                "\n";
+    }
 }

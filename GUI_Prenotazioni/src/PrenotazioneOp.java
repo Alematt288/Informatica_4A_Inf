@@ -2,13 +2,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
 public class PrenotazioneOp extends JFrame implements ActionListener
 {
     private Prenotazione[] arrayPrenotazioni;
-    public static final String FILE_PATH = "C:\\Users\\asus\\Desktop\\GUI_Prenotazioni";
+    public static final String SEPARATOR = ",";
 
     JButton conferma;
     JButton annulla;
@@ -179,6 +180,37 @@ public class PrenotazioneOp extends JFrame implements ActionListener
                         ex.printStackTrace();
                     }
                 }
+            }
+        }
+    }
+
+    public void salvaCsv()
+    {
+        File file = new File("C:\\Users\\asus\\Desktop\\GUI_Prenotazioni\\foglio.csv");
+        BufferedWriter bw = null;
+
+        try
+        {
+            bw = new BufferedWriter(new FileWriter(file));
+
+            for(int y = 0; y < i; y++)
+            {
+                bw.write(arrayPrenotazioni[i].rowCsv());
+            }
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        finally
+        {
+            try
+            {
+                bw.close();
+            }
+            catch (IOException e)
+            {
+                e.printStackTrace();
             }
         }
     }
